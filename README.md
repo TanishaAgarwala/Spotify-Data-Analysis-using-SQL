@@ -48,13 +48,36 @@ Queries are structured in **three** levels:
 
 **3. Query Optimization**
 
-- Used **EXPLAIN ANALYZE** to check query execution plans.
+To improve query performance, we carried out the following optimization process:
 
-- Created **indexes** on frequently used columns (e.g., artist).
+Initial Query Performance Analysis Using EXPLAIN
 
-- Reduced query time significantly (7ms → 0.15ms).
+We began by analyzing the performance of a query using the EXPLAIN function.
+The query retrieved tracks based on the artist column, and the performance metrics were as follows:
+Execution time (E.T.): 7.1 ms
+Planning time (P.T.): 0.2 ms
+<img width="681" height="427" alt="Screenshot 2025-09-14 005008" src="https://github.com/user-attachments/assets/14a20a26-a068-4a8f-b851-632ee4ecd92a" />
 
-- Visualized before/after performance improvements.
+Below is the screenshot of the EXPLAIN result before optimization:
+
+
+Index Creation on the artist Column
+
+To optimize the query performance, we created an index on the artist column. This ensures faster retrieval of rows where the artist is queried.
+SQL command for creating the index:
+
+``` CREATE INDEX idx_artist ON spotify_tracks(artist);```
+
+Performance Analysis After Index Creation
+
+After creating the index, we ran the same query again and observed significant improvements in performance:
+Execution time (E.T.): 0.16 ms
+Planning time (P.T.): 1.75 ms
+Below is the screenshot of the EXPLAIN result after index creation:
+
+<img width="725" height="492" alt="Screenshot 2025-09-14 010011" src="https://github.com/user-attachments/assets/f49c3b93-e686-4974-8db2-2b64ffb3a104" />
+
+This optimization shows how indexing can drastically reduce query time, improving the overall performance of our database operations in the Spotify project.
 
 **📊 Sample Business Insights**
 
