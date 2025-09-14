@@ -1,5 +1,7 @@
 # Spotify-Data-Analysis-using-SQL
 Advanced SQL Analysis on Spotify Dataset |  Window Functions , Query Optimization &amp; Business Insights
+
+
 🎵 Spotify Advanced SQL Project & Query Optimization
 
 ![spotify_logo](https://github.com/user-attachments/assets/e5406e7b-d57b-4d3b-831e-f56963a55c60)
@@ -56,9 +58,10 @@ We began by analyzing the performance of a query using the EXPLAIN function.
 The query retrieved tracks based on the artist column, and the performance metrics were as follows:
 Execution time (E.T.): 7.1 ms
 Planning time (P.T.): 0.2 ms
-<img width="681" height="427" alt="Screenshot 2025-09-14 005008" src="https://github.com/user-attachments/assets/14a20a26-a068-4a8f-b851-632ee4ecd92a" />
 
 Below is the screenshot of the EXPLAIN result before optimization:
+<img width="681" height="427" alt="Screenshot 2025-09-14 005008" src="https://github.com/user-attachments/assets/14a20a26-a068-4a8f-b851-632ee4ecd92a" />
+
 
 
 Index Creation on the artist Column
@@ -81,7 +84,7 @@ This optimization shows how indexing can drastically reduce query time, improvin
 
 **📊 Sample Business Insights**
 
-- Top 5 tracks by **energy score**.
+- Top 5 Artists by Total Streams
 
 - Artists with the **highest average views**.
 
@@ -100,6 +103,7 @@ This optimization shows how indexing can drastically reduce query time, improvin
 - **Optimization**: Indexing, Query Execution Plan (EXPLAIN)
 
 - **Tools**: pgAdmin 4 / SQL Editor
+- 
 
 
 
