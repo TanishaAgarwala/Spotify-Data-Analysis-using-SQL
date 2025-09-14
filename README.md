@@ -108,8 +108,8 @@ Insight: Post Malone, Ed Sheeran, Dua Lipa, XXXTentacion, and The Weeknd dominat
 )
 SELECT artist, avg_views
 FROM artist_avg
-WHERE rnk <= 3; ```
-
+WHERE rnk <= 3;
+```
 Insight:Highlights artists whose songs consistently attract high views.
 
 **⚡Tech Stack**
