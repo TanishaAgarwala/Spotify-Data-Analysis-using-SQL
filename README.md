@@ -1,4 +1,4 @@
-# Spotify-Data-Analysis-using-SQL
+# 🎵 Spotify-Data-Analysis-using-SQL
 Advanced SQL Analysis on Spotify Dataset |  Window Functions , Query Optimization &amp; Business Insights
 
 
@@ -9,15 +9,14 @@ Advanced SQL Analysis on Spotify Dataset |  Window Functions , Query Optimizatio
 
 📌 **Project Overview**
 
-This project analyzes a Spotify dataset containing tracks, albums, artists, and streaming statistics. Using PostgreSQL, I explored the data through easy, medium, and advanced SQL queries, and applied query optimization techniques to improve performance.
+TThis project analyzes a Spotify dataset with 20+ columns and ~20,595 rows containing information about tracks, albums, artists, and streaming statistics.
+Using PostgreSQL, I explored the data with easy, medium, and advanced SQL queries, and optimized query performance with indexes and EXPLAIN plans.
 
-The goal of this project is to:
+**✅ Key Goals**
 
-- Strengthen advanced SQL skills (window functions, CTEs, subqueries).
-
-- Practice real-world database optimization using EXPLAIN and indexes.
-
-- Generate business insights such as most popular tracks, artist performance, and streaming trends.
+-Strengthen advanced SQL skills (CTEs, window functions, ranking, ratios).
+-Practice real-world query optimization (EXPLAIN, indexing).
+-Generate business insights into artist popularity, streaming patterns, and listener behavior.
 
 📂 **Dataset**
 
@@ -82,28 +81,29 @@ Below is the screenshot of the EXPLAIN result after index creation:
 
 This optimization shows how indexing can drastically reduce query time, improving the overall performance of our database operations in the Spotify project.
 
-**📊 Sample Business Insights**
+**📊Key Business Insights**
 
-- Top 5 Artists by Total Streams
+- Top 5 Artists by Total Streams~
+ 🎯Top artists dominate streaming, with Post Malone alone surpassing 15B streams.
 
-- Artists with the **highest average views**.
+- Tracks Released as Singles~
+🎯4,973 tracks (~24% of all songs) which signifies nearly 1 in 4 tracks are singles, reflecting the modern trend of singles over full albums.
 
-- Most popular **album type** (single vs album).
+- Top 3 Most-Viewed Tracks per Artist~
+🎯  Identifies each artist’s biggest hits, useful for playlists, promotions, and tour setlists.
 
-- **Cumulative likes trend** across tracks.
+- **Cumulative likes trend** across tracks~
+🎯Tracks with higher likes-to-views ratios stand out as viral fan favorites, not just popular songs.
 
-- Energy-to-liveness ratio for hit songs.
+
 
 **⚡ Tech Stack**
 
 - **Database**: PostgreSQL
-
 - **SQL**: Joins, Aggregations, Window Functions, CTEs, Subqueries
-
 - **Optimization**: Indexing, Query Execution Plan (EXPLAIN)
-
 - **Tools**: pgAdmin 4 / SQL Editor
-- 
+ 
 
 
 
