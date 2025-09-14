@@ -1,4 +1,4 @@
-# 🎵 Spotify-Data-Analysis-using-SQL
+#  Spotify-Data-Analysis-using-SQL
 Advanced SQL Analysis on Spotify Dataset |  Window Functions , Query Optimization &amp; Business Insights
 
 
@@ -9,7 +9,7 @@ Advanced SQL Analysis on Spotify Dataset |  Window Functions , Query Optimizatio
 
 📌 **Project Overview**
 
-TThis project analyzes a Spotify dataset with 20+ columns and ~20,595 rows containing information about tracks, albums, artists, and streaming statistics.
+This project analyzes a Spotify dataset with 20+ columns and ~20,595 rows containing information about tracks, albums, artists, and streaming statistics.
 Using PostgreSQL, I explored the data with easy, medium, and advanced SQL queries, and optimized query performance with indexes and EXPLAIN plans.
 
 **✅ Key Goals**
@@ -23,18 +23,14 @@ Using PostgreSQL, I explored the data with easy, medium, and advanced SQL querie
 The dataset includes attributes such as:
 
 - **Track / Artist / Album / Album Type**
-
 - **Streaming statistics**: views, likes, comments, streams
-
 - **Audio features**: danceability, energy, tempo, liveness, valence, etc.
-
 - **Flags**: licensed, official video, most_played_on
 
 🚀**Project Steps**
 **1. Data Exploration**
 
 - Created a relational table in PostgreSQL (spotify).
-
 - Explored key features like artist, track, views, likes, comments, and audio metrics.
 
 **2. SQL Querying (Easy → Advanced)**
@@ -42,15 +38,12 @@ The dataset includes attributes such as:
 Queries are structured in **three** levels:
 
 - **Easy** → filtering, aggregations, counts.
-
 - **Medium** → grouping, averages, conditional aggregations.
-
 - **Advanced** → window functions, CTEs, ratios, and ranking queries.
 
 **3. Query Optimization**
 
 To improve query performance, we carried out the following optimization process:
-
 Initial Query Performance Analysis Using EXPLAIN
 
 We began by analyzing the performance of a query using the EXPLAIN function.
@@ -75,6 +68,7 @@ Performance Analysis After Index Creation
 After creating the index, we ran the same query again and observed significant improvements in performance:
 Execution time (E.T.): 0.16 ms
 Planning time (P.T.): 1.75 ms
+“**⚡Query execution improved by ~44x after indexing (7.1 ms → 0.16 ms).”**
 Below is the screenshot of the EXPLAIN result after index creation:
 
 <img width="725" height="492" alt="Screenshot 2025-09-14 010011" src="https://github.com/user-attachments/assets/f49c3b93-e686-4974-8db2-2b64ffb3a104" />
@@ -83,21 +77,42 @@ This optimization shows how indexing can drastically reduce query time, improvin
 
 **📊Key Business Insights**
 
-- Top 5 Artists by Total Streams~
- 🎯Top artists dominate streaming, with Post Malone alone surpassing 15B streams.
-
-- Tracks Released as Singles~
-🎯4,973 tracks (~24% of all songs) which signifies nearly 1 in 4 tracks are singles, reflecting the modern trend of singles over full albums.
-
-- Top 3 Most-Viewed Tracks per Artist~
-🎯  Identifies each artist’s biggest hits, useful for playlists, promotions, and tour setlists.
-
+- **Top 5 Artists** by Total Streams
+ -🎯Top artists dominate streaming, with Post Malone alone surpassing 15B streams.
+- Tracks Released as **Singles**
+- 🎯4,973 tracks (~24% of all songs) which signifies nearly 1 in 4 tracks are singles, reflecting the modern trend of singles over full albums.
+- **Top 3 Most-Viewed Tracks** per Artist~
+-🎯Identifies each artist’s biggest hits, useful for playlists, promotions, and tour setlists.
 - **Cumulative likes trend** across tracks~
-🎯Tracks with higher likes-to-views ratios stand out as viral fan favorites, not just popular songs.
+-🎯Tracks with higher likes-to-views ratios stand out as viral fan favorites, not just popular songs.
 
+**🧩 Sample Queries**
 
+🔹**1. Top 5 Artists by Streams**
+```SELECT artist, SUM(stream) AS total_streams
+FROM spotify_tracks
+GROUP BY artist
+ORDER BY total_streams DESC
+LIMIT 5;
+```
+Insight: Post Malone, Ed Sheeran, Dua Lipa, XXXTentacion, and The Weeknd dominate Spotify streams.
 
-**⚡ Tech Stack**
+🔹**2: Top 3 Artists with Highest Average Views**
+
+```WITH artist_avg AS (
+    SELECT artist,
+           AVG(views) AS avg_views,
+           ROW_NUMBER() OVER (ORDER BY AVG(views) DESC) AS rnk
+    FROM spotify
+    GROUP BY artist
+)
+SELECT artist, avg_views
+FROM artist_avg
+WHERE rnk <= 3; ```
+
+Insight:Highlights artists whose songs consistently attract high views.
+
+**⚡Tech Stack**
 
 - **Database**: PostgreSQL
 - **SQL**: Joins, Aggregations, Window Functions, CTEs, Subqueries
