@@ -1,4 +1,4 @@
----Advanced SQL project---SPOTIFY---
+---Advanced SQL project---SPOTIFY----
 
 /*Creating Table */
 
@@ -222,4 +222,5 @@ LIMIT 25
 Create index artist_index on spotify(artist)
 
 /*Before Index-PT->0.234ms,ET->7.1ms
+
 After Index- PT-> 1.75ms, ET-> 0.165ms
