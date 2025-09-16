@@ -2,7 +2,7 @@
 Advanced SQL Analysis on Spotify Dataset |  Window Functions , Query Optimization &amp; Business Insights
 
 
-🎵 Spotify Advanced SQL Project & Query Optimization
+🎵 **Spotify Advanced SQL Project & Query Optimization**
 
 ![spotify_logo](https://github.com/user-attachments/assets/e5406e7b-d57b-4d3b-831e-f56963a55c60)
 
